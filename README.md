@@ -29,6 +29,7 @@
 <a href="#icl-patterns">
 <img src="https://img.shields.io/badge/ICL%20Patterns-Supported-blueviolet.svg" alt="ICL Support">
 </a>
+[![ICL Security Pattern Template](https://img.shields.io/badge/ICL%20Security%20Pattern%20-Template-blue?style=flat&logo=github)](./ICL_Security_Pattern_Template.md)
 
 </p>
 
