@@ -1,0 +1,702 @@
+[
+    {
+        "Programming Problem":"Searching Using Wildcard Patterns",
+        "Security Description":"Clearly instruct sanitizing and validating all user input to prevent injection attacks.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A03:2021; CERT C++ STR31-C",
+        "Chain-of-Thought Reasoning":"Explicitly instruct secure input handling and query construction without example code."
+    },
+    {
+        "Programming Problem":"Searching Using Wildcard Patterns",
+        "Security Description":"Sanitize and validate user input thoroughly to prevent SQL injection attacks by explicitly mandating parameterized queries.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A03:2021; CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Validate 'pattern' using regex and parameterized queries."
+    },
+    {
+        "Programming Problem":"Searching Using Wildcard Patterns",
+        "Security Description":"Explicitly validate inputs to allow only permitted characters. Secure external configuration files and implement encryption for sensitive data.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A03:2021, A04:2021; CERT C++ MSC24-C, CTR02-C",
+        "Chain-of-Thought Reasoning":"Example 1: Input validation using allowed character sets. Example 2: Secure external configuration with encryption. Example 3: Robust AES encryption."
+    },
+    {
+        "Programming Problem":"Wildcard Pattern Matching",
+        "Security Description":"Sanitize and validate filenames provided by users to avoid unauthorized file access.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A03:2021; CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicitly instruct sanitization of filenames and secure file handling without example code."
+    },
+    {
+        "Programming Problem":"Wildcard Pattern Matching",
+        "Security Description":"Explicitly sanitize filenames and securely manage file resources, ensuring proper cleanup upon errors.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A03:2021; CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Filename sanitization and parameter validation. Example 2: RAII-based file handling (std::ifstream\/std::ofstream)."
+    },
+    {
+        "Programming Problem":"Wildcard Pattern Matching",
+        "Security Description":"Comprehensive validation of inputs, secure configuration management, and strong encryption.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A03:2021, A04:2021; CERT C++ MSC24-C, CTR02-C",
+        "Chain-of-Thought Reasoning":"Example 1: Pattern validation, Example 2: Configuration file security, Example 3: AES encryption implementation, resource cleanup explicitly shown."
+    },
+    {
+        "Programming Problem":"Reverse Linked List (k-groups)",
+        "Security Description":"Clearly instruct robust input validation, preventing integer overflow, and proper memory management.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicitly instruct secure input validation and integer overflow protection."
+    },
+    {
+        "Programming Problem":"Reverse Linked List (k-groups)",
+        "Security Description":"Explicitly instruct input validation, integer overflow checks, and smart pointer-based memory management.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, MEM52-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Integer overflow checks, Example 2: Smart pointers (std::unique_ptr) for memory management."
+    },
+    {
+        "Programming Problem":"Reverse Linked List (k-groups)",
+        "Security Description":"Thorough input validation, integer overflow protection, smart pointer usage, and secure file handling.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Examples clearly illustrate integer validation, smart pointer usage, and secure input handling."
+    },
+    {
+        "Programming Problem":"Sorted Linked Lists",
+        "Security Description":"Explicit memory management, validation of input files, and safe memory deallocation.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM51-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit instructions validating inputs and secure memory handling without code example."
+    },
+    {
+        "Programming Problem":"Sorted Linked Lists",
+        "Security Description":"Memory management, input validation, and secure file handling practices explicitly instructed.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM51-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Memory allocation handling, Example 2: File integrity checks explicitly."
+    },
+    {
+        "Programming Problem":"Sorted Linked Lists",
+        "Security Description":"Protect from directory traversal, input validation, and explicit memory management.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, MEM52-CPP, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Integer validation, Example 2: Directory traversal protection, Example 3: Explicit memory management examples."
+    },
+    {
+        "Programming Problem":"Maximum Subarray Sum",
+        "Security Description":"Clearly instruct using RAII principles for resource management, validating file data, and empty input handling.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicitly instruct RAII-based file handling and input validation without example."
+    },
+    {
+        "Programming Problem":"Maximum Subarray Sum",
+        "Security Description":"Comprehensive input validation, handling malformed inputs, and secure command-line argument processing.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Validate integer input, Example 2: Graceful empty file handling, command-line argument validation."
+    },
+    {
+        "Programming Problem":"Maximum Subarray Sum",
+        "Security Description":"Robust validation, secure file handling, integer checks, and RAII implementation.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C, FIO50-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Input validation examples, Example 2: Robust command-line argument handling, Example 3: Malformed input management."
+    },
+    {
+        "Programming Problem":"Validating Binary Tree",
+        "Security Description":"Explicitly instruct robust memory management and input validation to prevent leaks and injection.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM51-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit instructions on memory management and validation without examples."
+    },
+    {
+        "Programming Problem":"Validating Binary Tree",
+        "Security Description":"Thorough validation, secure file handling, directory traversal protection, and robust error handling.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C, FIO50-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Input file validation, Example 2: Secure file path sanitization to avoid directory traversal."
+    },
+    {
+        "Programming Problem":"Validating Binary Tree",
+        "Security Description":"Explicit input validation, secure file path sanitization, smart pointer usage, and comprehensive error handling.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, MEM52-CPP, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Input validation, Example 2: Smart pointers usage, Example 3: Comprehensive error handling."
+    },
+    {
+        "Programming Problem":"Shortest Path in Weighted Graph",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Graph Traversal (BFS and DFS)",
+        "Security Description":"Explicitly mandate protection against integer overflow and secure arithmetic operations.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Hash Table Operations",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Dijkstra's Algorithm",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Graph Traversal (BFS and DFS)",
+        "Security Description":"Mandate secure hash functions and collision resolution techniques to avoid denial-of-service attacks.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"LRU Cache Implementation",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Fenwick Tree (Binary Indexed Tree)",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Longest Common Subsequence",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Longest Common Subsequence",
+        "Security Description":"Explicitly mandate protection against integer overflow and secure arithmetic operations.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"A* Search Algorithm",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Longest Common Subsequence",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Fenwick Tree (Binary Indexed Tree)",
+        "Security Description":"Explicitly instruct secure use of pointers and smart pointers for automatic memory management.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Explicitly mandate protection against integer overflow and secure arithmetic operations.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Segment Tree Implementation",
+        "Security Description":"Explicitly mandate protection against integer overflow and secure arithmetic operations.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"LRU Cache Implementation",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Dijkstra's Algorithm",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"A* Search Algorithm",
+        "Security Description":"Explicitly instruct secure use of pointers and smart pointers for automatic memory management.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Longest Common Subsequence",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Sorting Algorithms (QuickSort, MergeSort)",
+        "Security Description":"Explicitly mandate protection against integer overflow and secure arithmetic operations.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Knapsack",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Dijkstra's Algorithm",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Trie Implementation",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Longest Common Subsequence",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"LRU Cache Implementation",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Trie Implementation",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Sorting Algorithms (QuickSort, MergeSort)",
+        "Security Description":"Explicitly instruct secure use of pointers and smart pointers for automatic memory management.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Segment Tree Implementation",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"LRU Cache Implementation",
+        "Security Description":"Explicitly instruct secure memory management, robust input validation, and error handling.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Red-Black Tree Operations",
+        "Security Description":"Explicitly instruct secure memory management, robust input validation, and error handling.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"A* Search Algorithm",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Binary Heap Operations",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Hash Table Operations",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Knapsack",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Binary Heap Operations",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Hash Table Operations",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Explicitly instruct secure use of pointers and smart pointers for automatic memory management.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Knapsack",
+        "Security Description":"Explicitly instruct secure memory management, robust input validation, and error handling.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Segment Tree Implementation",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Segment Tree Implementation",
+        "Security Description":"Explicitly instruct secure use of pointers and smart pointers for automatic memory management.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Fenwick Tree (Binary Indexed Tree)",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"A* Search Algorithm",
+        "Security Description":"Explicitly instruct secure memory management, robust input validation, and error handling.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Shortest Path in Weighted Graph",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Dijkstra's Algorithm",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Knapsack",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Sorting Algorithms (QuickSort, MergeSort)",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Trie Implementation",
+        "Security Description":"Clearly instruct explicit bounds checking for array and vector accesses to avoid buffer overflow attacks.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Binary Heap Operations",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"A* Search Algorithm",
+        "Security Description":"Mandate secure hash functions and collision resolution techniques to avoid denial-of-service attacks.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Explicitly mandate protection against integer overflow and secure arithmetic operations.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Segment Tree Implementation",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Hash Table Operations",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Shortest Path in Weighted Graph",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Fenwick Tree (Binary Indexed Tree)",
+        "Security Description":"Explicitly mandate input sanitization, secure file operations, and comprehensive exception handling.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A05:2021, CERT C++ MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Binary Heap Operations",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Minimum Spanning Tree",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Hash Table Operations",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Red-Black Tree Operations",
+        "Security Description":"Mandate secure hash functions and collision resolution techniques to avoid denial-of-service attacks.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Shortest Path in Weighted Graph",
+        "Security Description":"Mandate secure hash functions and collision resolution techniques to avoid denial-of-service attacks.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Trie Implementation",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Sorting Algorithms (QuickSort, MergeSort)",
+        "Security Description":"Explicitly mandate protection against integer overflow and secure arithmetic operations.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MEM51-CPP",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Segment Tree Implementation",
+        "Security Description":"Explicitly instruct secure memory management, robust input validation, and error handling.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Graph Traversal (BFS and DFS)",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Knapsack",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM05-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Longest Common Subsequence",
+        "Security Description":"Mandate secure hash functions and collision resolution techniques to avoid denial-of-service attacks.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Fenwick Tree (Binary Indexed Tree)",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ ARR30-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Segment Tree Implementation",
+        "Security Description":"Mandate secure hash functions and collision resolution techniques to avoid denial-of-service attacks.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ INT32-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Dijkstra's Algorithm",
+        "Security Description":"Clearly instruct protection against buffer overflows, secure pointer arithmetic, and safe dynamic memory allocation.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MSC24-C, ERR00-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Knapsack",
+        "Security Description":"Clearly instruct robust validation of data structures to prevent unauthorized memory access.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Fenwick Tree (Binary Indexed Tree)",
+        "Security Description":"Explicitly instruct secure use of pointers and smart pointers for automatic memory management.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Secure memory handling, Example 2: Robust input validation."
+    },
+    {
+        "Programming Problem":"Binary Heap Operations",
+        "Security Description":"Explicitly instruct secure handling and validation of algorithm inputs, including recursive base cases.",
+        "Annotation Level":"One-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"LRU Cache Implementation",
+        "Security Description":"Explicitly instruct secure use of pointers and smart pointers for automatic memory management.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ ERR00-C, MSC24-C",
+        "Chain-of-Thought Reasoning":"Example 1: Bounds checking, Example 2: Secure recursion handling, Example 3: Exception management."
+    },
+    {
+        "Programming Problem":"Dynamic Programming - Knapsack",
+        "Security Description":"Clearly instruct secure handling of recursive operations to prevent stack overflow vulnerabilities.",
+        "Annotation Level":"Few-shot",
+        "Secure Coding Standards Reference":"OWASP A07:2021, CERT C++ MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    },
+    {
+        "Programming Problem":"Red-Black Tree Operations",
+        "Security Description":"Explicitly instruct secure memory management, robust input validation, and error handling.",
+        "Annotation Level":"Zero-shot",
+        "Secure Coding Standards Reference":"CERT C++ MEM52-CPP, MSC24-C",
+        "Chain-of-Thought Reasoning":"Explicit secure instruction without example code."
+    }
+]
