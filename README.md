@@ -52,15 +52,15 @@ This repository accompanies the research study on the security, reliability, and
 
 # Research Objectives
 
-Evaluate security defects in LLM-generated source code
+- Evaluate security defects in LLM-generated source code
 
-Compare prompt-based generators (ChatGPT, Bard) vs coding copilots (Copilot, Whisperer)
+- Compare prompt-based generators (ChatGPT, Bard) vs coding copilots (Copilot, Whisperer)
 
-Apply ICL security patterns (zero-shot, one-shot, few-shot) for behavioral security learning
+- Apply ICL security patterns (zero-shot, one-shot, few-shot) for behavioral security learning
 
-Detect and quantify vulnerabilities using Static Application Security Testing (SAST)
+- Detect and quantify vulnerabilities using Static Application Security Testing (SAST)
 
-Introduce the Code Security Risk Measure (CSRM) to measure LLM code risk
+- Introduce the Code Security Risk Measure (CSRM) to measure LLM code risk
 
 # Key Contributions
 
