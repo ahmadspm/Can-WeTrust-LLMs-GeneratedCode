@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ICL Security Pattern Template – Secure Coding with LLMs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #111827;
+      --card-bg: #020617;
+      --card-border: #1e293b;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.09);
+      --accent-strong: #0ea5e9;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-soft: #6b7280;
+      --danger: #f97373;
+      --success: #22c55e;
+      --warning: #facc15;
+      --code-bg: #020617;
+      --code-border: #1f2933;
+      --chip-bg: #1e293b;
+      --chip-border: #374151;
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.9);
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 48%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page-shell {
+      max-width: 1120px;
+      margin: 32px auto 48px;
+      padding: 0 16px 40px;
+    }
+
+    header {
+      position: relative;
+      padding: 24px 20px 28px;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 55%);
+      border: 1px solid #1e293b;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(56,189,248,0.1) 0, transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(59,130,246,0.07) 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    header .header-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      background: rgba(15,23,42,0.85);
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(56,189,248,0.4);
+      backdrop-filter: blur(14px);
+      width: fit-content;
+    }
+
+    .eyebrow span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 32px);
+      letter-spacing: 0.02em;
+      font-weight: 650;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.55);
+      background: rgba(15,23,42,0.9);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    nav {
+      position: sticky;
+      top: 16px;
+      align-self: flex-start;
+      background: rgba(15,23,42,0.96);
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      padding: 14px 14px 16px;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.8);
+    }
+
+    nav h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin: 0 0 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 13px;
+    }
+
+    nav li a {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+    }
+
+    nav li a span.bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      opacity: 0.0;
+      flex-shrink: 0;
+    }
+
+    nav li a:hover {
+      background: rgba(15,23,42,0.95);
+      border-color: rgba(148,163,184,0.45);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    nav li a:hover span.bullet {
+      opacity: 1;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    section.block {
+      background: rgba(15,23,42,0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      padding: 18px 18px 16px;
+      box-shadow: 0 16px 32px rgba(15,23,42,0.8);
+    }
+
+    .block-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .block-title {
+      font-size: 15px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .block-title-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .block-body {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .chip {
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      background: var(--chip-bg);
+      border: 1px solid var(--chip-border);
+      font-size: 11px;
+      color: var(--text-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      opacity: 0.8;
+    }
+
+    .list-inline-label {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 720px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    ul {
+      margin: 4px 0 4px 18px;
+      padding-left: 0;
+    }
+
+    li {
+      margin: 2px 0;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .checklist li {
+      margin: 3px 0;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .checklist li.critical::before {
+      content: "⚠";
+      color: var(--danger);
+    }
+
+    .label {
+      display: inline-flex;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.5);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+    }
+
+    pre {
+      margin: 8px 0 8px;
+      padding: 10px 11px;
+      border-radius: var(--radius-md);
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      overflow-x: auto;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #e5e7eb;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    }
+
+    .kbd {
+      display: inline-flex;
+      padding: 2px 7px;
+      border-radius: 6px;
+      border: 1px solid #4b5563;
+      background: #020617;
+      font-size: 11px;
+      font-family: ui-monospace, SFMono-Regular, SFMono, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      color: #e5e7eb;
+    }
+
+    .callout {
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(148,163,184,0.3);
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .callout strong {
+      color: var(--accent-strong);
+    }
+
+    .callout.danger {
+      border-color: rgba(248,113,113,0.7);
+      background: radial-gradient(circle at top left, rgba(248,113,113,0.15), #020617 55%);
+    }
+
+    .badge-soft {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(56,189,248,0.5);
+      color: var(--accent-strong);
+      font-size: 11px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header>
+      <div class="header-inner">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          ICL Security Pattern Template · LLM-Assisted Secure Coding
+        </div>
+        <div>
+          <h1>ICL Security Pattern Template</h1>
+          <p class="subtitle">
+            Universal, language-agnostic template for guiding Large Language Models and developers
+            to generate secure-by-design code using In-Context Learning (ICL), aligned with OWASP ASVS,
+            NIST SSDF, Microsoft Secure Coding, and related standards.
+          </p>
+        </div>
+        <div class="tag-row">
+          <span class="tag">AI + DevSecOps + Risk + ICL</span>
+          <span class="tag">OWASP ASVS</span>
+          <span class="tag">NIST SSDF</span>
+          <span class="tag">Microsoft SDL</span>
+          <span class="tag">CWE-aware</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav aria-label="Template Sections">
+        <h2>SECTIONS</h2>
+        <ul>
+          <li><a href="#purpose"><span class="bullet"></span>Purpose</a></li>
+          <li><a href="#role-setup"><span class="bullet"></span>LLM Role Setup</a></li>
+          <li><a href="#dev-context"><span class="bullet"></span>Development Context</a></li>
+          <li><a href="#trust-threat"><span class="bullet"></span>Trust &amp; Threat Model</a></li>
+          <li><a href="#objectives"><span class="bullet"></span>Security Objectives</a></li>
+          <li><a href="#spec"><span class="bullet"></span>Functional &amp; Security Spec</a></li>
+          <li><a href="#controls"><span class="bullet"></span>Mandatory Controls</a></li>
+          <li><a href="#icl-prompts"><span class="bullet"></span>ICL Prompt Structure</a></li>
+          <li><a href="#output"><span class="bullet"></span>Expected Output Format</a></li>
+          <li><a href="#review"><span class="bullet"></span>Developer Review Checklist</a></li>
+          <li><a href="#never"><span class="bullet"></span>“Never Allow” Rules</a></li>
+          <li><a href="#refs"><span class="bullet"></span>References</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <!-- Purpose -->
+        <section id="purpose" class="block">
+          <div class="block-header">
+            <div class="block-title">
+              🛡️ Purpose
+              <span class="block-title-badge">Template v1.0</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <p>
+              This template standardises how developers and AI coding systems (LLMs, GitHub Copilot,
+              ChatGPT, Bard, CodeWhisperer, etc.) apply secure-by-design principles when generating code
+              using <strong>In-Context Learning (ICL) Security Patterns</strong>.
+            </p>
+            <p>It provides a reusable structure to ensure:</p>
+            <ul>
+              <li>Secure defaults and explicit risk awareness</li>
+              <li>Minimised vulnerability surface across languages and paradigms</li>
+              <li>Consistent secure coding behaviour for LLM-assisted workflows</li>
+              <li>Repeatable, auditable, and defensible security posture in DevSecOps pipelines</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- LLM Role Setup -->
+        <section id="role-setup" class="block">
+          <div class="block-header">
+            <div class="block-title">
+              🤖 LLM Role Setup
+              <span class="block-title-badge">Mandatory</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <p class="list-inline-label">Instruction to the model (paste at the start of your prompt):</p>
+            <pre><code>You are a <secure coding assistant>. Your priorities are, in this exact order:
+1. Correctness
+2. Security
+3. Maintainability
+4. Performance
+
+You MUST:
+- Follow OWASP ASVS and OWASP Top 10 controls.
+- Apply NIST SSDF and Microsoft Secure Coding guidance.
+- Avoid known CWE weaknesses whenever safe alternatives exist.
+- Use secure defaults and fail securely.
+- Clearly separate functional logic from security checks where appropriate.</code></pre>
+            <div class="callout">
+              <strong>Tip:</strong> Keep this role header constant across all prompts in your CI/CD or
+              DevSecOps templates so LLMs behave consistently across repositories and teams.
+            </div>
+          </div>
+        </section>
+
+        <!-- Development Context -->
+        <section id="dev-context" class="block">
+          <div class="block-header">
+            <div class="block-title">🧾 Development Context</div>
+          </div>
+          <div class="block-body">
+            <p>Fill these fields yourself before asking the LLM to generate code:</p>
+            <div class="two-col">
+              <div>
+                <p><span class="list-inline-label">Feature / Module:</span><br>
+                  <span class="label">Example</span> <span class="text-soft">Secure login endpoint, audit logger, payment API, etc.</span><br>
+                  <span class="kbd">{Describe what needs to be built}</span>
+                </p>
+                <p><span class="list-inline-label">Language &amp; Framework:</span><br>
+                  <span class="kbd">{Python + FastAPI, C# ASP.NET Core, Java Spring, Node.js Express, Go Gin, C++ CLI, etc.}</span>
+                </p>
+                <p><span class="list-inline-label">Runtime / Platform:</span><br>
+                  <span class="kbd">{e.g. .NET 8, JVM 17, Python 3.11, AWS Lambda, Azure App Service, Kubernetes}</span>
+                </p>
+              </div>
+              <div>
+                <p><span class="list-inline-label">Data Sensitivity:</span></p>
+                <ul class="checklist">
+                  <li>Public</li>
+                  <li>Internal</li>
+                  <li>Confidential</li>
+                  <li>Secret / Highly regulated</li>
+                </ul>
+                <p><span class="list-inline-label">Threat Profile:</span></p>
+                <ul class="checklist">
+                  <li>Low – dev tools, prototypes, non-sensitive</li>
+                  <li>Medium – standard business data</li>
+                  <li>High – auth, payments, safety-critical, PII/health data</li>
+                </ul>
+                <p><span class="list-inline-label">Domain:</span><br>
+                  <span class="kbd">{Web / API / Microservice / Mobile / Desktop / ICS / OT / Cloud-native}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Trust & Threat Model -->
+        <section id="trust-threat" class="block">
+          <div class="block-header">
+            <div class="block-title">🧱 Trust &amp; Threat Model</div>
+          </div>
+          <div class="block-body">
+            <div class="two-col">
+              <div>
+                <p class="list-inline-label">Trust Boundaries</p>
+                <ul>
+                  <li><strong>Untrusted:</strong> Internet clients, uploaded files, external APIs, user-controlled input</li>
+                  <li><strong>Semi-trusted:</strong> Internal services, partner APIs, message queues</li>
+                  <li><strong>Trusted:</strong> Databases, key vaults, HSM, identity provider</li>
+                </ul>
+              </div>
+              <div>
+                <p class="list-inline-label">Threat Concerns (tick applicable):</p>
+                <ul class="checklist">
+                  <li class="critical">Injection (SQL/NoSQL/Command/Template/LDAP)</li>
+                  <li>XSS / HTML injection</li>
+                  <li>CSRF / session fixation</li>
+                  <li>IDOR / broken access control</li>
+                  <li>SSRF / LFI / RFI</li>
+                  <li>Unsafe deserialization / reflection</li>
+                  <li>Path traversal / arbitrary file access</li>
+                  <li>Insecure crypto &amp; hard-coded keys</li>
+                  <li>Sensitive data exposure (logs, responses, crashes)</li>
+                  <li>Supply chain misuse (unvetted libs)</li>
+                  <li>DoS / resource exhaustion</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Security Objectives -->
+        <section id="objectives" class="block">
+          <div class="block-header">
+            <div class="block-title">🎯 Security Objectives</div>
+          </div>
+          <div class="block-body">
+            <p>Mark the security properties the implementation must uphold:</p>
+            <ul class="checklist">
+              <li>Confidentiality (protect secrets and sensitive data)</li>
+              <li>Integrity (prevent tampering, injection, and logic abuse)</li>
+              <li>Availability (graceful degradation, rate limiting, timeouts)</li>
+              <li>Authentication (identity proof, sessions, tokens)</li>
+              <li>Authorization (RBAC/ABAC, least privilege)</li>
+              <li>Traceability &amp; auditing (logs, correlation IDs, non-repudiation)</li>
+              <li>Safety / ICS process protection (for OT/CPS contexts)</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Functional & Security Spec -->
+        <section id="spec" class="block">
+          <div class="block-header">
+            <div class="block-title">🧠 Functional &amp; Security Specification</div>
+          </div>
+          <div class="block-body">
+            <p class="list-inline-label">Functional Steps (developer defines for the LLM):</p>
+            <pre><code>1. {Receive request/input – HTTP/CLI/message/etc.}
+2. {Validate input schema and types, reject invalid payloads}
+3. {Perform business logic / DB queries / external calls}
+4. {Return structured response with safe error handling}</code></pre>
+
+            <p class="list-inline-label">Security Requirements (LLM must implement):</p>
+            <ul>
+              <li>Strict, preferably whitelisting-based input validation</li>
+              <li>Parameterised DB access or safe ORM usage</li>
+              <li>No dynamic <code>eval</code> or unsafe reflection on untrusted input</li>
+              <li>Context-aware output encoding (HTML/JSON/Logs)</li>
+              <li>Secrets never hard-coded or logged</li>
+              <li>Generic, non-verbose error messages to clients</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Mandatory Controls -->
+        <section id="controls" class="block">
+          <div class="block-header">
+            <div class="block-title">
+              🔒 Mandatory Security Controls
+              <span class="block-title-badge">LLM must apply</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <div class="two-col">
+              <div>
+                <p class="list-inline-label">Input Validation &amp; Encoding</p>
+                <ul>
+                  <li>Validate type, length, format (email, UUID, etc.)</li>
+                  <li>Reject unexpected fields (fail closed)</li>
+                  <li>Use schema validators / DTOs / pydantic / annotations</li>
+                  <li>Encode outputs based on sink (HTML/JSON/logs)</li>
+                </ul>
+
+                <p class="list-inline-label">Authentication &amp; Session Management</p>
+                <ul>
+                  <li>Use framework auth/session mechanisms (no custom crypto)</li>
+                  <li>Hash passwords with vetted algorithms (bcrypt, Argon2, PBKDF2)</li>
+                  <li>Use secure cookie flags (HttpOnly, Secure, SameSite where relevant)</li>
+                  <li>Never log passwords or full tokens</li>
+                </ul>
+
+                <p class="list-inline-label">Authorization</p>
+                <ul>
+                  <li>Server-side RBAC/ABAC for each sensitive operation</li>
+                  <li>Enforce least privilege for accounts, roles, and tokens</li>
+                  <li>No client-side only security checks</li>
+                </ul>
+              </div>
+              <div>
+                <p class="list-inline-label">Cryptography &amp; Secrets</p>
+                <ul>
+                  <li>Use vetted crypto libraries and modern TLS</li>
+                  <li>No home-grown encryption or hashing</li>
+                  <li>Load secrets from environment, vault, or config providers</li>
+                  <li>Never hard-code API keys, tokens, or DB passwords</li>
+                </ul>
+
+                <p class="list-inline-label">Error Handling &amp; Logging</p>
+                <ul>
+                  <li>No stack traces, file paths, SQL, or secrets in client errors</li>
+                  <li>Return generic messages, log details internally</li>
+                  <li>Avoid logging step-up auth, PII, tokens</li>
+                </ul>
+
+                <p class="list-inline-label">Resource Management &amp; DoS</p>
+                <ul>
+                  <li>Apply timeouts, payload limits, pagination</li>
+                  <li>Close DB connections, file handles, and streams</li>
+                  <li>Avoid unbounded loops or allocations on untrusted input</li>
+                </ul>
+
+                <p class="list-inline-label">Dependencies &amp; External APIs</p>
+                <ul>
+                  <li>Prefer maintained, well-known libs</li>
+                  <li>Avoid unsafe dynamic plugin loading or <code>eval</code></li>
+                  <li>Validate TLS certificates &amp; hostnames for outbound calls</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ICL Prompt Structure -->
+        <section id="icl-prompts" class="block">
+          <div class="block-header">
+            <div class="block-title">🧩 ICL Prompt Structure</div>
+          </div>
+          <div class="block-body">
+            <p>Use the following patterns when prompting LLMs in your DevOps pipelines.</p>
+
+            <p class="list-inline-label">0. Zero-Shot (baseline secure prompt):</p>
+            <pre><code>Generate secure {language} code for {feature}, applying OWASP ASVS and secure-by-default
+practices: strict input validation, parameterized DB/API access, safe error handling,
+and no hard-coded secrets.</code></pre>
+
+            <p class="list-inline-label">1. One-Shot (add one secure example before the request):</p>
+            <pre><code>[SECURE EXAMPLE – ONE-SHOT]
+Uses:
+- strict input schema validation
+- parameterized query
+- generic error messages
+- no sensitive data in logs
+
+Now, using the same secure coding style, implement: {your new feature description} in {language/framework}.</code></pre>
+
+            <p class="list-inline-label">2. Few-Shot (2–3 focused secure examples):</p>
+            <pre><code>[Example 1] Secure validation + encoding
+[Example 2] Secure DB / file access
+[Example 3] Secure auth / API key check
+
+Using these examples as security patterns, implement {feature} in {language/framework}.
+If you must trade off, favor security and clarity over brevity.</code></pre>
+          </div>
+        </section>
+
+        <!-- Expected Output Format -->
+        <section id="output" class="block">
+          <div class="block-header">
+            <div class="block-title">📤 Expected Output Format (from LLM)</div>
+          </div>
+          <div class="block-body">
+            <p>The LLM should respond with three clearly separated parts:</p>
+            <ol>
+              <li>
+                <strong>Secure Implementation Code</strong><br />
+                A self-contained code snippet (or minimal set of files) with only essential security comments.
+              </li>
+              <li>
+                <strong>Security Checklist Summary</strong><br />
+                Short bullet points describing:
+                <ul>
+                  <li>How inputs are validated and sanitised</li>
+                  <li>How injection and other threats are mitigated</li>
+                  <li>How secrets and credentials are handled</li>
+                  <li>How errors and logging avoid sensitive leaks</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Known Limitations / Security TODOs</strong><br />
+                Explicitly list assumptions, edge cases, and items requiring manual review or hardening.
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Review Checklist -->
+        <section id="review" class="block">
+          <div class="block-header">
+            <div class="block-title">
+              🧪 Developer Review Checklist
+              <span class="block-title-badge">Post-Generation</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <p>Before code is merged or deployed, a human reviewer should confirm:</p>
+            <ul class="checklist">
+              <li>SAST tools (Snyk, Semgrep, Bandit, Sonar, etc.) run clean or with understood exceptions</li>
+              <li>No secrets, API keys, or credentials in code, config, or logs</li>
+              <li>All external inputs are validated (type, length, allowed values)</li>
+              <li>All DB, file, and external calls use parameterization or safe APIs</li>
+              <li>Logging is appropriate and does not expose PII or security-sensitive data</li>
+              <li>Error responses to clients are generic and non-verbose</li>
+              <li>Dependencies are pinned and from trusted sources</li>
+              <li>Authorization logic is enforced server-side and tested</li>
+              <li>Threat model assumptions match reality (e.g. real trust boundaries)</li>
+            </ul>
+            <div class="callout">
+              <strong>Review tip:</strong> Ask the LLM itself to identify potential CWEs and propose fixes, then
+              validate its suggestions manually.
+            </div>
+          </div>
+        </section>
+
+        <!-- Never Allow Rules -->
+        <section id="never" class="block">
+          <div class="block-header">
+            <div class="block-title">
+              ⛔ “Never Allow” Rules
+              <span class="block-title-badge">Non-Negotiable</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <p>The generated code and review process must never accept any of the following:</p>
+            <ul>
+              <li>Hard-coded passwords, tokens, keys, or secrets of any kind</li>
+              <li>Disabling TLS/HTTPS or certificate validation in production code</li>
+              <li>Building SQL/NoSQL/LDAP queries with string concatenation of untrusted input</li>
+              <li>Using <code>eval</code> / reflection / dynamic execution on untrusted input</li>
+              <li>Returning raw stack traces, file system paths, or SQL queries to clients</li>
+              <li>Accepting file uploads without validation, size limits, or storage controls</li>
+              <li>Bypassing access control checks “for convenience” or “temporary debugging”</li>
+            </ul>
+            <div class="callout danger">
+              <strong>Breaking any “Never Allow” rule should block the merge or deployment</strong> until fixed,
+              or explicitly risk-accepted and documented under your organisation’s governance.
+            </div>
+          </div>
+        </section>
+
+        <!-- References -->
+        <section id="refs" class="block">
+          <div class="block-header">
+            <div class="block-title">
+              📚 References &amp; Standards
+              <span class="block-title-badge">Security Alignment</span>
+            </div>
+          </div>
+          <div class="block-body">
+            <p>Recommended baselines for implementing and extending this template:</p>
+            <ul>
+              <li>OWASP Application Security Verification Standard (ASVS)</li>
+              <li>OWASP Top 10 (latest edition)</li>
+              <li>NIST Secure Software Development Framework (SSDF), SP 800-218</li>
+              <li>CERT Secure Coding Standards</li>
+              <li>Microsoft Security Development Lifecycle (SDL) – Secure Coding Guidelines</li>
+              <li>ISO/IEC 27034 – Application Security</li>
+            </ul>
+            <div class="callout">
+              <span class="badge-soft">Usage</span>
+              Incorporate this HTML template into your DevOps portals, documentation sites, or GitHub Pages to
+              standardise how teams and LLMs collaborate on secure code generation.
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          ICL Security Pattern Template · Designed for LLM-assisted secure coding in DevSecOps pipelines.
+        </footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
