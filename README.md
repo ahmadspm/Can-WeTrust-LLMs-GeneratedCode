@@ -44,6 +44,7 @@ If you use this repository, experiment datasets, security metrics, ICL patterns,
 Mohsin, A., Janicke, H., Wood, A., Sarker, I.H., Maglaras, L., & Janjua, N. (2025). Can We Trust LLM-Generated Code? A Framework for In-Context Learning, Security Patterns, and Code Evaluations.
 <img width="1314" height="376" alt="image" src="https://github.com/user-attachments/assets/80569af9-e069-4bf4-97a7-47431bd01183" />
 
+
 <p align="left"> <!-- DOI Badge (placeholder, replace once issued) -->
 
   # Overview
