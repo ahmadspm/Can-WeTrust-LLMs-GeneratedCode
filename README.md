@@ -83,6 +83,23 @@ Introduce the Code Security Risk Measure (CSRM) to measure LLM code risk
 
 - AI-driven SAST (IDE plugin)
 
+## ICL Security Pattern Template
+
+The ICL Security Pattern Template provides a unified, language-agnostic secure coding structure for developers using Large Language Models (LLMs) for code generation.
+It ensures that all AI-assisted code adheres to defensible security baselines and repeatable secure-by-design development practices.
+
+###  Purpose
+
+LLMs generate functional code but often overlook essential security controls.
+This template embeds In-Context Learning (ICL) security constraints so that any code produced by ChatGPT, Copilot, CodeWhisperer, etc. aligns with:
+
+OWASP ASVS (Application Security Verification Standard), NIST SSDF (Secure Software Development Framework, SP 800-218), Microsoft SDL – Secure Coding Guidelines
+
+OPTIONAL- CERT Secure Coding, ISO/IEC 27034 – Application Security
+
+It operates as a governed prompt contract that ensures every interaction with an LLM follows the same secure logic and threat perspective.
+
+
 ## Patterns Applied
 
 - Secure I/O validation
