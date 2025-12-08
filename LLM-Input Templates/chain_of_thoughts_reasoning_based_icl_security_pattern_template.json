@@ -1,0 +1,34 @@
+{
+    "Chain_of_Thoughts_Reasoning_Based_ICL_Security_Pattern_Template_for_LLMs": [
+        {
+            "Programming Problem": "<Enter problem title>",
+            "Problem Description": "<Detailed problem description>",
+            "Annotation Level (Zero-shot/One-shot/Few-shot)": "Zero-shot",
+            "Security Instructions (Explicit Requirements)": "Clearly instruct secure input validation, resource handling, and secure operations without examples.",
+            "Secure Coding Examples (Chain-of-Thought Reasoning)": "<None for Zero-shot>",
+            "Secure Coding Standards & References": "OWASP Top 10 (Injection, Security Misconfiguration); CERT Secure Coding Standards (General recommendations)",
+            "Expected Code Language": "<Language e.g., C++>",
+            "Expected Output Instructions": "Secure instructions clearly provided without specific code examples."
+        },
+        {
+            "Programming Problem": "",
+            "Problem Description": "",
+            "Annotation Level (Zero-shot/One-shot/Few-shot)": "One-shot",
+            "Security Instructions (Explicit Requirements)": "Explicitly instruct secure input validation, error handling, and resource cleanup. Provide one or two secure code examples.",
+            "Secure Coding Examples (Chain-of-Thought Reasoning)": "Example: Validate inputs using regex or explicitly handle exceptions and resource management.",
+            "Secure Coding Standards & References": "OWASP Top 10 (Injection, Cryptographic Failures); CERT C++ ERR00-C (Error Handling), MSC24-C (Input Validation)",
+            "Expected Code Language": "<Language e.g., C++>",
+            "Expected Output Instructions": "Explicitly provide one or two secure coding examples illustrating proper validation, sanitization, and resource management."
+        },
+        {
+            "Programming Problem": "",
+            "Problem Description": "",
+            "Annotation Level (Zero-shot/One-shot/Few-shot)": "Few-shot",
+            "Security Instructions (Explicit Requirements)": "Explicitly mandate detailed security measures including thorough input sanitization, comprehensive error handling, secure memory management, encryption, and resource cleanup. Provide multiple secure coding examples.",
+            "Secure Coding Examples (Chain-of-Thought Reasoning)": "Example 1: Explicit input sanitization; Example 2: Secure encryption methods; Example 3: Comprehensive error handling and memory management.",
+            "Secure Coding Standards & References": "OWASP Top 10 (Injection, Cryptographic Failures, Security Misconfiguration); CERT C++ MEM52-CPP (Memory Management), MSC24-C (Input Validation), ERR00-C (Error Handling), CTR02-C (Encryption Standards)",
+            "Expected Code Language": "<Language e.g., C++>",
+            "Expected Output Instructions": "Provide comprehensive secure coding examples covering explicit sanitization, validation, encryption, memory handling, and robust error handling."
+        }
+    ]
+}

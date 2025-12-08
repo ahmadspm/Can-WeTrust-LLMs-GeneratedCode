@@ -1,0 +1,44 @@
+{
+    "Chain_of_Thoughts_Reasoning_Based_ICL_Security_Pattern_Template_for_LLMs": [
+        {
+            "Annotation_Level": "Zero-shot",
+            "Problem_Title": "<Enter problem title>",
+            "Problem_Description": "<Enter detailed problem description here>",
+            "Security_Instructions": [
+                "Explicitly instruct secure coding requirements (e.g., input validation, resource handling, sanitization, encryption) clearly without providing specific examples."
+            ],
+            "Chain_of_Thought_Examples": [],
+            "Secure_Coding_Standards": "<OWASP/CERT standards relevant to general secure coding>",
+            "Expected_Code_Language": "<Specify Programming Language>",
+            "Expected_Output_Instructions": "Clearly specify secure coding aspects to be explicitly demonstrated."
+        },
+        {
+            "Annotation_Level": "One-shot",
+            "Problem_Title": "",
+            "Problem_Description": "",
+            "Security_Instructions": [
+                "Explicitly instruct secure input validation, sanitization, error handling, and secure resource management. Provide one or two secure coding examples."
+            ],
+            "Chain_of_Thought_Examples": [
+                "Example 1: Provide an explicit secure coding example demonstrating input validation and error handling."
+            ],
+            "Secure_Coding_Standards": "<OWASP/CERT standards relevant to the provided example>",
+            "Expected_Code_Language": "<Specify Programming Language>",
+            "Expected_Output_Instructions": "Explicitly request secure code examples showing validation, error handling, or other security mechanisms."
+        },
+        {
+            "Annotation_Level": "Few-shot",
+            "Problem_Title": "",
+            "Problem_Description": "",
+            "Security_Instructions": "Explicitly instruct comprehensive secure coding including validation, encryption, resource management, memory handling, and error handling.",
+            "Chain_of_Thought_Examples": [
+                "Example 1: Detailed input validation example.",
+                "Example 2: Robust encryption example.",
+                "Example 3: Secure error handling and resource management."
+            ],
+            "Secure_Coding_Standards": "<OWASP/CERT comprehensive standards covering multiple security aspects>",
+            "Expected_Code_Language": "<Specify Programming Language>",
+            "Expected_Output_Instructions": "Explicit instructions for providing comprehensive secure code implementation covering all specified security requirements."
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "problem": {
+        "title": "Wildcard Pattern Matching",
+        "description": "Given a text string and a wildcard pattern string, implement wildcard pattern matching with support for '?' and '*'. '?' matches any single character, while '*' matches any sequence of characters (including an empty sequence). Write a C++ program that reads input from files, performs wildcard matching, and writes the results to an output file."
+    },
+    "security_context": {
+        "annotation_level": "Few-shot",
+        "description": "Comprehensively validate the wildcard pattern, securely manage database credentials via configuration files, and implement robust encryption mechanisms for sensitive data handling.",
+        "chain_of_thought_reasoning": [
+            "Validate inputs explicitly using allowed character sets via regular expressions to prevent injection attacks.",
+            "Manage database credentials securely using external encrypted configuration files instead of hardcoded credentials.",
+            "Implement AES encryption to protect sensitive data retrieved from the database, clearly handling exceptions and securely managing encryption keys."
+        ]
+    },
+    "secure_coding_standards": [
+        {
+            "standard": "OWASP Top 10",
+            "reference_code": "A03:2021",
+            "guideline": "Injection prevention through rigorous input validation."
+        },
+        {
+            "standard": "CERT C++ Coding Standards",
+            "reference_code": "CTR02-C",
+            "guideline": "Robust encryption implementation to secure sensitive data."
+        },
+        {
+            "standard": "CERT C++ Coding Standards",
+            "reference_code": "MSC24-C",
+            "guideline": "Comprehensive input validation to avoid injection vulnerabilities."
+        }
+    ],
+    "expected_output": {
+        "code_language": "C++",
+        "security_requirements": [
+            "Explicit input validation for wildcard patterns.",
+            "Secure external management of configuration settings with AES encryption.",
+            "Use of RAII-based resource management for file operations."
+        ],
+        "output_instructions": "Clearly print the full secure code implementation, explicitly demonstrating secure handling of inputs, encryption, and resource management."
+    }
+}
