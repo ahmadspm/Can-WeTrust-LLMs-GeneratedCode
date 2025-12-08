@@ -1,0 +1,11 @@
+No.,API Architectural Style,Programming Problem,Description
+1,REST,Develop a RESTful API for User Management,"Design and implement a RESTful API that allows users to create, retrieve, update, and delete user profiles. Ensure proper status codes, request validation, and authentication."
+2,RPC,Implement an RPC-based Remote Calculator Service,"Develop an RPC service that performs arithmetic operations remotely, allowing clients to send requests for addition, subtraction, multiplication, and division."
+3,GraphQL,Build a GraphQL API for E-commerce Product Queries,"Create a GraphQL API that allows clients to fetch specific product details, including categories, reviews, and availability, minimizing over-fetching of data."
+4,SOAP,Develop a SOAP-based Payment Gateway API,"Implement a SOAP-based API for secure payment transactions, ensuring proper XML schema validation and WS-Security compliance."
+5,gRPC,Create a gRPC-based Microservices Communication System,"Design a microservices architecture where services communicate using gRPC, optimizing for performance with Protocol Buffers."
+6,WebSockets,Implement a Real-Time Chat Application Using WebSockets,"Develop a chat system that enables real-time messaging between users, utilizing WebSockets for bi-directional communication."
+7,Event-Driven Architecture (EDA),Create an Event-Driven Order Processing System,"Design a system where order placement, processing, and notifications are handled asynchronously using an event-driven approach."
+8,HATEOAS,Develop a Hypermedia API for a Blogging Platform,"Implement an API that provides hypermedia links in responses, allowing clients to dynamically navigate available actions."
+9,Publish-Subscribe (Pub/Sub),Build a Pub/Sub Notification Service,Design a publish-subscribe system where multiple clients can subscribe to different topics and receive real-time notifications when updates occur.
+10,Microservices Architecture,Develop a Microservices-based API Gateway,"Create an API gateway that routes requests to multiple microservices, handling authentication, rate limiting, and caching efficiently."
