@@ -3,6 +3,9 @@
 A universal, language-agnostic secure coding guidance template for LLM-assisted software development using In-Context Learning (ICL).  
 Aligned with **OWASP ASVS, NIST SSDF, Microsoft SDL, CERT Secure Coding, ISO/IEC 27034**.
 
+#### Note: 
+in this reserach we hae only used OWASP ASVS, Microsoft SDL and NIST SSDF selected secure coding priciples and guidelines 
+
 ---
 
 ## 2. LLM Role Setup
@@ -277,3 +280,4 @@ The assistant must provide:
 
 **Usage Reminder:**  
 This ICL template should be included in CI, DevSecOps pipelines, GitHub PR review rules, and LLM-assisted code generation workflows to produce repeatable enterprise-grade secure code across languages and runtime stacks.
+
