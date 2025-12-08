@@ -29,9 +29,14 @@
 <a href="#icl-patterns">
 <img src="https://img.shields.io/badge/ICL%20Patterns-Supported-blueviolet.svg" alt="ICL Support">
 </a>
-[![ICL Security Pattern Template](https://img.shields.io/badge/ICL%20Security%20Pattern%20-Template-blue?style=flat&logo=github)](./ICL_Security_Pattern_Template.md)
+
+<!-- CL Security Pattern Template Badge -->
+<a href="https://github.com/ahmadspm/Can-WeTrust-LLMs-GeneratedCode/blob/main/LLM-Input%20Templates/CL_Security_Pattern_Template.md">
+<img src="https://img.shields.io/badge/ICL%20Security%20Pattern-CL_Template-blue.svg" alt="CL Security Pattern Template">
+</a>
 
 </p>
+
 
 # Citation Notice
 If you use this repository, experiment datasets, security metrics, ICL patterns, or evaluation results, please cite:
