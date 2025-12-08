@@ -1,0 +1,46 @@
+No.,Programming Problem,Description
+1,Implement a Stack Using Arrays,"Design and implement a stack data structure using arrays, including standard operations like push, pop, and peek."
+2,Implement a Queue Using Linked Lists,"Create a queue data structure using singly linked lists, supporting enqueue and dequeue operations."
+3,Reverse a Linked List,Write a function to reverse a singly linked list.
+4,Detect a Cycle in a Linked List,Implement an algorithm to detect if a linked list contains a cycle.
+5,Find the Middle Element of a Linked List,Develop a function to find the middle node in a singly linked list.
+6,Implement a Binary Search Tree (BST),"Design and implement a BST with insertion, deletion, and search functionalities."
+7,"Traverse a Binary Tree (In-order, Pre-order, Post-order)",Write functions to traverse a binary tree in different orders.
+8,Level Order Traversal of a Binary Tree,Implement a function for level order traversal (breadth-first) of a binary tree.
+9,Find the Height of a Binary Tree,Write a function to determine the height of a binary tree.
+10,Check if a Binary Tree is Balanced,Develop an algorithm to check if a binary tree is height-balanced.
+11,Implement Depth-First Search (DFS),Implement DFS for graph traversal.
+12,Implement Breadth-First Search (BFS),Implement BFS for graph traversal.
+13,Find the Shortest Path in a Graph (Dijkstra's Algorithm),Implement Dijkstra's algorithm to find the shortest path in a weighted graph.
+14,Detect a Cycle in a Graph,Write an algorithm to detect cycles in a directed graph.
+15,Topological Sorting of a Directed Acyclic Graph (DAG),Implement topological sort for a DAG.
+16,Implement Merge Sort,Write a function to sort an array using merge sort.
+17,Implement Quick Sort,Write a function to sort an array using quick sort.
+18,Find the Kth Largest Element in an Array,Develop an algorithm to find the Kth largest element in an unsorted array.
+19,Implement a Hash Table,Design and implement a hash table with basic operations.
+20,Implement LRU Cache,Create a Least Recently Used (LRU) cache with get and put operations.
+21,Check for Balanced Parentheses,Write a function to check if an expression has balanced parentheses.
+22,Evaluate a Postfix Expression,Implement an algorithm to evaluate a postfix expression.
+23,Convert Infix Expression to Postfix,Write a function to convert an infix expression to postfix notation.
+24,Find All Permutations of a String,Develop a function to generate all permutations of a given string.
+25,Implement a Trie (Prefix Tree),Design and implement a trie for efficient word storage and retrieval.
+26,Longest Common Subsequence,Write a function to find the longest common subsequence between two strings.
+27,Longest Increasing Subsequence,Develop an algorithm to find the longest increasing subsequence in an array.
+28,0/1 Knapsack Problem,Implement the 0/1 knapsack problem using dynamic programming.
+29,Fibonacci Sequence (Recursive and Iterative),Write functions to generate Fibonacci numbers both recursively and iteratively.
+30,Find Prime Numbers Using Sieve of Eratosthenes,Implement the Sieve of Eratosthenes to find all prime numbers up to a given limit.
+31,Calculate Factorial (Recursive and Iterative),Write functions to calculate the factorial of a number both recursively and iteratively.
+32,Check if a Number is a Palindrome,Develop a function to check if a given number is a palindrome.
+33,Find the Greatest Common Divisor (GCD),Implement Euclidean algorithm to find the GCD of two numbers.
+34,Find the Lowest Common Ancestor (LCA) in a BST,Write a function to find the LCA of two nodes in a BST.
+35,Implement a Priority Queue Using Heaps,Design and implement a priority queue using a binary heap.
+36,Median of Two Sorted Arrays,Find the median of two sorted arrays of possibly different sizes.
+37,Implement a Circular Buffer,Design and implement a circular buffer with read and write operations.
+38,Count Inversions in an Array,Develop an algorithm to count the number of inversions in an array.
+39,Find the Intersection of Two Linked Lists,Write a function to find the intersection point of two singly linked lists.
+40,Detect and Remove Loop in a Linked List,Implement an algorithm to detect and remove a loop in a linked list.
+41,Merge Two Sorted Linked Lists,Write a function to merge two sorted singly linked lists into one sorted list.
+42,Implement a Doubly Linked List,Design and implement a doubly linked list with insertion and deletion operations.
+43,Implement a Graph Using Adjacency List,Create a graph data structure using an adjacency list representation.
+44,Implement a Graph Using Adjacency Matrix,Create a graph data structure using an adjacency matrix representation.
+45,Rotate a Matrix by 90 Degrees,Write a function to rotate a square matrix by 90 degrees clockwise.

@@ -1,0 +1,12 @@
+No.,Programming Problem,Description
+1,User Authentication and Authorization System,"Implement a secure system that manages user registration, login, role-based access control, and session management within an MVC framework."
+2,CRUD Operations for a Product Catalog,"Develop Create, Read, Update, and Delete functionalities for managing a product catalog, ensuring proper separation of concerns between the data model, user interface, and business logic."
+3,Blog Platform with Commenting Feature,"Create a blogging platform where users can create posts and add comments, utilizing MVC to manage the interactions between data models, views, and controllers."
+4,E-commerce Shopping Cart System,"Build a shopping cart that allows users to add, remove, and modify products, integrating with inventory management and checkout processes, all structured within the MVC design pattern."
+5,Real-Time Chat Application,"Develop a chat application that supports real-time messaging between users, employing MVC to handle data flow, user interfaces, and control logic."
+6,Event Scheduling and Booking System,"Implement a system where users can schedule and book events, with MVC facilitating the management of event data, user interactions, and application responses."
+7,Content Management System (CMS),"Create a CMS that allows administrators to manage website content dynamically, using MVC to separate content data, administrative views, and content management logic."
+8,Online Forum with Threaded Discussions,"Develop an online forum supporting threaded discussions, where MVC organizes the structure of posts, user interactions, and discussion flows."
+9,Inventory Management System,"Build a system to track and manage inventory levels, orders, and deliveries, utilizing MVC to separate inventory data handling, user interfaces, and business rules."
+10,Task Management and To-Do Application,"Implement a task management application that allows users to create, update, and track tasks, with MVC ensuring a clear separation between task data, user views, and control mechanisms."
+11,Integrating LLM APIs for Enhanced User Interaction,"Incorporate Large Language Model (LLM) APIs, such as OpenAI's GPT, into an MVC application to provide advanced features like natural language search, content generation, or personalized recommendations."
