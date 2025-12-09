@@ -124,11 +124,7 @@ We are applied a number of security pattrens in ICL templates (from one to few s
 # Key Insights
 
 - Zero-shot LLM code is not production-safe
-
 - ICL patterns significantly reduce vulnerabilities, but do not eliminate them
-
 - Co-pilots learn security context better than prompt-only LLMs
-
 - Multi-example ICL (few-shot) produces best secure coding behavior
-
 - Developer misuse or uninformed prompting remains a top threat vector
