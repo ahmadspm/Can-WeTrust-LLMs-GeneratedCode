@@ -53,13 +53,9 @@ This repository accompanies the research study on the security, reliability, and
 # Research Objectives
 
 - Evaluate security defects in LLM-generated source code
-
 - Compare prompt-based generators (ChatGPT, Bard) vs coding copilots (Copilot, Whisperer)
-
 - Apply ICL security patterns (zero-shot, one-shot, few-shot) for behavioral security learning
-
 - Detect and quantify vulnerabilities using Static Application Security Testing (SAST)
-
 - Introduce the Code Security Risk Measure (CSRM) to measure LLM code risk
 
 # Key Contributions
@@ -79,10 +75,9 @@ This repository accompanies the research study on the security, reliability, and
 ## Security Testing Tools
 
 - Snyk SAST Analyzer
-
 - AWS Security Scan API
-
 - AI-driven SAST (IDE plugin)
+- Manual Code Security Analysis (Code Smell Analysis)
 
 ## ICL Security Pattern Template
 
@@ -102,15 +97,11 @@ It operates as a governed prompt contract that ensures every interaction with an
 
 
 ## Patterns Applied
-
+We are applied a number of security pattrens in ICL templates (from one to few shots) using OWASP ASVS, NIST SSDF and Microsoft SDL best secure coding practices. Here are few selected mostly used. 
 - Secure I/O validation
-
 - Sanitization & escaping
-
 - Secure environment key management
-
 - MVC secure model binding
-
 - REST API authentication & rate limiting.
 
 # Vulnerability Reduction via ICL
