@@ -13,7 +13,7 @@ and trustworthiness of AI-generated software**.
 
 The dataset supports research in:
 
--   Secure code generation
+-   Secure code generation using LLM ICL security patterns
 -   Vulnerability detection in AI-generated code
 -   Evaluation of LLM programming assistants
 -   AI-assisted software development security
