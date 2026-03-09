@@ -171,7 +171,4 @@ Maglaras, Leandros and Janjua, Naeem}}, year={{2024}} }}
 
 # Contact
 
-Dr Ahmad Mohsin\
-Centre for Securing Digital Futures\
-Edith Cowan University\
-Australia
+ Ahmad Mohsin {a.mohsin@ecu.edu.au}
