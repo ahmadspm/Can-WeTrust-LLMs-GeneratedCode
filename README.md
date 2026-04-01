@@ -84,6 +84,9 @@ This repository accompanies the research study on the security, reliability, and
 The ICL Security Pattern Template provides a unified, language-agnostic secure coding structure for developers using Large Language Models (LLMs) for code generation.
 It ensures that all AI-assisted code adheres to defensible security baselines and repeatable secure-by-design development practices.
 
+
+<img width="862" height="318" alt="ICL-Devops-template" src="https://github.com/user-attachments/assets/1717c0db-44c6-4867-aac1-c2ae8afe1763" />
+
 ###  Purpose
 
 LLMs generate functional code but often overlook essential security controls.
