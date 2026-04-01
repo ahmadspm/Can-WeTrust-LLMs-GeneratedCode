@@ -1,0 +1,134 @@
+template_name: Universal_ICL_Security_Pattern_Template
+domain: software_engineering
+usage_context:
+  - DevSecOps
+  - IDE_assistants
+  - PDCGs
+  - CCPs
+  - CI_CD
+supports:
+  - zero_shot
+  - one_shot
+  - few_shot
+
+software_engineering_context:
+  project_name: "[INSERT]"
+  development_context: "[INSERT]"
+  sdlc_stage: "[INSERT]"
+  target_environment: "[INSERT]"
+  programming_language: "[INSERT]"
+  framework_platform: "[INSERT]"
+
+functional_task:
+  task_description: "[INSERT]"
+  expected_output: "[INSERT]"
+  io_constraints: "[INSERT]"
+
+security_requirements_engineering:
+  primary_requirements:
+    - "[INSERT]"
+    - "[INSERT]"
+  security_objective: "[INSERT]"
+  standards:
+    owasp_asvs: "[INSERT]"
+    nist_ssdf: "[INSERT]"
+    cwe: "[INSERT]"
+    internal_guideline: "[INSERT]"
+
+threat_model:
+  assets:
+    - "[INSERT]"
+  threat_actors:
+    - "[INSERT]"
+  threats:
+    - "[INSERT]"
+    - "[INSERT]"
+  vulnerabilities_to_avoid:
+    - "[INSERT]"
+
+security_constraints:
+  must:
+    - validate and sanitize untrusted input
+    - avoid hard-coded secrets, tokens, and credentials
+    - use secure authentication and authorization where applicable
+    - use parameterized queries for database access
+    - avoid insecure file and path handling
+    - fail securely with safe error messages
+    - protect sensitive data where applicable
+    - follow least privilege and secure defaults
+    - include comments explaining security-relevant decisions
+    - be production-ready and maintainable
+  must_not:
+    - use unsafe dynamic query construction
+    - expose internal errors or sensitive data
+    - bypass authorization checks
+    - disable certificate validation
+    - rely on insecure defaults
+    - use placeholder security logic in production code
+
+generation_instruction:
+  objective: "Generate secure, production-ready code"
+  steps:
+    - identify main security risks
+    - explain mitigations
+    - apply secure-by-design principles
+    - ensure compatibility with language/framework/environment
+
+required_output:
+  - security_analysis
+  - secure_implementation
+  - security_explanation
+  - validation_checklist
+  - suggested_security_tests
+
+devsecops_integration:
+  embedding_points:
+    - IDE_prompt_presets
+    - repository_guidelines
+    - PR_automation
+    - CI_CD_prompt_policies
+    - assistant_wrappers
+    - secure_engineering_playbooks
+  companion_controls:
+    - SAST
+    - secrets_scanning
+    - dependency_scanning
+    - IaC_scanning
+    - code_review_gates
+    - policy_as_code
+
+reusable_prompt_block: |
+  You are assisting with a software engineering task in a DevSecOps context.
+
+  Project context:
+  [INSERT]
+
+  Programming language / framework:
+  [INSERT]
+
+  Task:
+  [INSERT]
+
+  Functional requirements:
+  [INSERT]
+
+  Security requirements:
+  [INSERT]
+
+  Threats / vulnerabilities to avoid:
+  [INSERT]
+
+  Security constraints:
+  - validate all untrusted input
+  - avoid hard-coded secrets
+  - enforce secure authentication/authorization where applicable
+  - use secure defaults
+  - avoid leaking sensitive information in errors or logs
+  - use safe data handling and secure coding best practices
+
+  Instructions:
+  1. Briefly identify the main security risks.
+  2. Generate secure, production-ready code.
+  3. Explain how the implementation satisfies the security requirements.
+  4. Suggest security validation steps and tests.
+  5. Align the solution with OWASP ASVS, NIST SSDF, and relevant CWE guidance where appropriate.
